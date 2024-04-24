@@ -51,7 +51,7 @@ resource "google_dataproc_cluster" "tbd-dataproc-cluster" {
     }
 
 preemptible_worker_config {
-      num_instances  = 1
+      num_instances  = 2
       preemptibility = "SPOT"
     }
 
