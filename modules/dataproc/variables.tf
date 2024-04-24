@@ -16,13 +16,11 @@ variable "subnet" {
 
 variable "mr_machine_type" {
   type        = string
-  default     = "e2-medium"
   description = "Machine type to use for master nodes"
 }
 
 variable "wr_machine_type" {
   type        = string
-  default     = "e2-medium"
   description = "Machine type to use for worker nodes"
 }
 
