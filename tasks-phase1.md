@@ -58,10 +58,20 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
 
        ![img.png](photos/service-accounts.png)
        
-    4. List of buckets for disposal
+    3. List of buckets for disposal
+  
+
+        tbd-2024l-309014-state - Bucket that stores information about infrastructure and its state - such as terraform files.
+        
+        tbd-2024l-309014-data - Bucket that stores the actual data produced by applications (raw data, application outputs, logs).
+        
+        tbd-2024l-309014-conf - Bucket that stores configuration files and scripts.
+        
+        tbd-2024l-309014-code - Bucket that stores execuable code, source code and libraries for Apache Spark.
+
        ![img.png](photos/buckets.png)
        
-    5. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
+    4. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
   
        ![img.png](photos/ips.png)
        ![img.png](photos/ports.png)
@@ -79,9 +89,11 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
   Infracost output:
    ![img.png](photos/infracost_plan.png)
 
-11. Create a BigQuery dataset and an external table using SQL
-    
-    ***place the code and output here***
+11. ✅ Create a BigQuery dataset and an external table using SQL
+
+    We used example query from README. Before executing this query is was necessary to complete step 13 because in that step data is pushed to the bucket and this query uses that data from the bucket.
+
+    ![img.png](photos/query_result.jpg)
    
     ORC does not require a table schema, because in contrast to traditional relational databases that require a predefined schema, ORC can function with schema-on-read. It means that data is interpreted at the time of reading. ORC has a header containing metadata about columns so that the schema can be understood when reading. ORC is made this way to provide flexibility for Big Data systems like Hadoop.
 
@@ -110,15 +122,15 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
 
 14. Additional tasks using Terraform:
 
-    1. Add support for arbitrary machine types and worker nodes for a Dataproc cluster and JupyterLab instance
+    ✅ 1. Add support for arbitrary machine types and worker nodes for a Dataproc cluster and JupyterLab instance
 
     ***place the link to the modified file and inserted terraform code***
     
-    3. Add support for preemptible/spot instances in a Dataproc cluster
+    ✅ 3. Add support for preemptible/spot instances in a Dataproc cluster
 
     ***place the link to the modified file and inserted terraform code***
     
-    3. Perform additional hardening of Jupyterlab environment, i.e. disable sudo access and enable secure boot
+    ✅ 3. Perform additional hardening of Jupyterlab environment, i.e. disable sudo access and enable secure boot
     
     ***place the link to the modified file and inserted terraform code***
 
