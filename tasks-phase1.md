@@ -41,7 +41,7 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
 
    ![img.png](photos/yarn-ui.png)
    
-9. Draw an architecture diagram (e.g. in draw.io) that includes:
+9. ✅ Draw an architecture diagram (e.g. in draw.io) that includes:
     1. VPC topology with service assignment to subnets
    
        
@@ -74,11 +74,24 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
        ![img.png](photos/buckets_list.png)
        
     4. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
-  
+
+        Apache Spark running from Vertex AI Workbench:
+        - 1 driver (Jupyter Notebook)
+        - 1 master
+        - 2 workers
+         
+        It is necessary to specify the host for the driver because it is needed to coordinate tasks and the worker nodes have to communicate back to the driver node, which returns the results.
+
+       ![img.png](photos/spark.png)
+
+        IPs:
+       
        <img src="https://github.com/NastyaRush/tbd-workshop-1/blob/master/photos/ips.png" width=70% height=70%>
+
+        Ports:
+       
        <img src="https://github.com/NastyaRush/tbd-workshop-1/blob/master/photos/ports.png" width=50% height=50%>
-  
-    ***place your diagram here***
+
 
 10. ✅ Create a new PR and add costs by entering the expected consumption into Infracost
 
