@@ -70,6 +70,8 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
         tbd-2024l-309014-code - Bucket that stores execuable code, source code and libraries for Apache Spark.
 
        ![img.png](photos/buckets.png)
+       ![img.png](photos/buckets_schema.png)
+       ![img.png](photos/buckets_list.png)
        
     4. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
   
@@ -91,7 +93,7 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
 
 11. ✅ Create a BigQuery dataset and an external table using SQL
 
-    We used example query from README. Before executing this query is was necessary to complete step 13 because in that step data is pushed to the bucket and this query uses that data from the bucket.
+    We used example query from README. Before executing this query is was necessary to complete step 13 because in that step data is pushed to the bucket and this query uses that data from the bucket. The project name here differs from other tasks because we had troubles with our main project, so we created another project.
 
     ![img.png](photos/query_result.jpg)
    
@@ -124,15 +126,29 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
 
     ✅ 1. Add support for arbitrary machine types and worker nodes for a Dataproc cluster and JupyterLab instance
 
-    ***place the link to the modified file and inserted terraform code***
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/dataproc/main.tf
+    
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/dataproc/variables.tf
+
+    ![img.png](photos/mr_wr_machine_types.jpg)
+    ![img.png](photos/mr_wr_machine_types_applied.jpg)
+
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/vertex-ai-workbench/main.tf
+    
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/vertex-ai-workbench/variables.tf)
+
+    ![img.png](photos/jupyterlab_instance_type.jpg)
+    ![img.png](photos/jupyterlab_instance_type_applied.jpg)
     
     ✅ 3. Add support for preemptible/spot instances in a Dataproc cluster
 
-    ***place the link to the modified file and inserted terraform code***
+     https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/dataproc/main.tf
     
     ✅ 3. Perform additional hardening of Jupyterlab environment, i.e. disable sudo access and enable secure boot
-    
-    ***place the link to the modified file and inserted terraform code***
+
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/vertex-ai-workbench/main.tf
+
+    ![img.png](photos/jupyterlab_hardening.jpg)
 
     4. (Optional) Get access to Apache Spark WebUI
 
