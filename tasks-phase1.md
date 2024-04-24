@@ -21,7 +21,7 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
     
     2. Create PR from this branch to **YOUR** master and merge it to make new release. 
     
-    ![img.png](photos/successfull_release)
+    ![img.png](photos/successfull_release){ width=50% }
 
 
 7. ✅ Analyze terraform code. Play with terraform plan, terraform graph to investigate different modules.
@@ -58,13 +58,25 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
 
        ![img.png](photos/service-accounts.png)
        
-    4. List of buckets for disposal
-       ![img.png](photos/buckets.png)
-       
-    5. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
+    3. List of buckets for disposal
   
-       ![img.png](photos/ips.png)
-       ![img.png](photos/ports.png)
+
+        tbd-2024l-309014-state - Bucket that stores information about infrastructure and its state - such as terraform files.
+        
+        tbd-2024l-309014-data - Bucket that stores the actual data produced by applications (raw data, application outputs, logs).
+        
+        tbd-2024l-309014-conf - Bucket that stores configuration files and scripts.
+        
+        tbd-2024l-309014-code - Bucket that stores execuable code, source code and libraries for Apache Spark.
+
+       ![img.png](photos/buckets.png)
+       ![img.png](photos/buckets_schema.jpg)
+       ![img.png](photos/buckets_list.png)
+       
+    4. Description of network communication (ports, why it is necessary to specify the host for the driver) of Apache Spark running from Vertex AI Workbech
+  
+       <img src="https://github.com/NastyaRush/tbd-workshop-1/blob/master/photos/ips.png" width=70% height=70%>
+       <img src="https://github.com/NastyaRush/tbd-workshop-1/blob/master/photos/ports.png" width=50% height=50%>
   
     ***place your diagram here***
 
@@ -74,14 +86,16 @@ For all the resources of type: `google_artifact_registry`, `google_storage_bucke
 create a sample usage profiles and add it to the Infracost task in CI/CD pipeline. Usage file [example](https://github.com/infracost/infracost/blob/master/infracost-usage-example.yml) 
 
   Expected consumption:
-   ![img.png](photos/infracost_expected_consumption.jpg)
+   <img src="https://github.com/NastyaRush/tbd-workshop-1/blob/master/photos/infracost_expected_consumption.jpg" width=70% height=70%>
 
   Infracost output:
-   ![img.png](photos/infracost_plan.png)
+   <img src="https://github.com/NastyaRush/tbd-workshop-1/blob/master/photos/infracost_plan.png" width=60% height=60%>
 
-11. Create a BigQuery dataset and an external table using SQL
-    
-    ***place the code and output here***
+11. ✅ Create a BigQuery dataset and an external table using SQL
+
+    We used example query from README. Before executing this query is was necessary to complete step 13 because in that step data is pushed to the bucket and this query uses that data from the bucket. The project name here differs from other tasks because we had troubles with our main project, so we created another project.
+
+    ![img.png](photos/query_result.jpg)
    
     ORC does not require a table schema, because in contrast to traditional relational databases that require a predefined schema, ORC can function with schema-on-read. It means that data is interpreted at the time of reading. ORC has a header containing metadata about columns so that the schema can be understood when reading. ORC is made this way to provide flexibility for Big Data systems like Hadoop.
 
@@ -110,18 +124,34 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
 
 14. Additional tasks using Terraform:
 
-    1. Add support for arbitrary machine types and worker nodes for a Dataproc cluster and JupyterLab instance
+    ✅ i. Add support for arbitrary machine types and worker nodes for a Dataproc cluster and JupyterLab instance
 
-    ***place the link to the modified file and inserted terraform code***
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/dataproc/main.tf
     
-    3. Add support for preemptible/spot instances in a Dataproc cluster
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/dataproc/variables.tf
 
-    ***place the link to the modified file and inserted terraform code***
-    
-    3. Perform additional hardening of Jupyterlab environment, i.e. disable sudo access and enable secure boot
-    
-    ***place the link to the modified file and inserted terraform code***
+    ![img.png](photos/mr_wr_machine_types.jpg)
+    ![img.png](photos/mr_wr_machine_types_applied.jpg)
 
-    4. (Optional) Get access to Apache Spark WebUI
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/vertex-ai-workbench/main.tf
+    
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/vertex-ai-workbench/variables.tf)
+
+    ![img.png](photos/jupyterlab_instance_type.jpg)
+    ![img.png](photos/jupyterlab_instance_type_applied.jpg)
+    
+    ✅ ii. Add support for preemptible/spot instances in a Dataproc cluster
+
+     https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/dataproc/main.tf
+
+    ![img.png](photos/preemptible.jpg)
+    
+    ✅ iii. Perform additional hardening of Jupyterlab environment, i.e. disable sudo access and enable secure boot
+
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/vertex-ai-workbench/main.tf
+
+    ![img.png](photos/jupyterlab_hardening.jpg)
+
+    iv. (Optional) Get access to Apache Spark WebUI
 
     ***place the link to the modified file and inserted terraform code***
