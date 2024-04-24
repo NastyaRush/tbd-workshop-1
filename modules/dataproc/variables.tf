@@ -14,14 +14,9 @@ variable "subnet" {
   description = "VPC subnet used for deployment"
 }
 
-variable "mr_machine_type" {
+variable "machine_type" {
   type        = string
-  description = "Machine type to use for master nodes"
-}
-
-variable "wr_machine_type" {
-  type        = string
-  description = "Machine type to use for worker nodes"
+  description = "Machine type to use for both master and worker nodes"
 }
 
 variable "image_version" {
