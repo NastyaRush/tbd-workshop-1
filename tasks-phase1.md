@@ -33,7 +33,7 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
    
     ![img.png](photos/vertex-ai-graph.png)
    
-9. ✅ Reach YARN UI
+8. ✅ Reach YARN UI
    
    Command used for setting up the tunnel:
 
@@ -41,7 +41,7 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
 
    ![img.png](photos/yarn-ui.png)
    
-11. Draw an architecture diagram (e.g. in draw.io) that includes:
+9. Draw an architecture diagram (e.g. in draw.io) that includes:
     1. VPC topology with service assignment to subnets
    
        
@@ -68,7 +68,8 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
   
     ***place your diagram here***
 
-12. ✅ Create a new PR and add costs by entering the expected consumption into Infracost
+10. ✅ Create a new PR and add costs by entering the expected consumption into Infracost
+
 For all the resources of type: `google_artifact_registry`, `google_storage_bucket`, `google_service_networking_connection`
 create a sample usage profiles and add it to the Infracost task in CI/CD pipeline. Usage file [example](https://github.com/infracost/infracost/blob/master/infracost-usage-example.yml) 
 
