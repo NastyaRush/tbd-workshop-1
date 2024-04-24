@@ -36,6 +36,5 @@ variable "ai_notebook_image_tag" {
 
 variable "jupyterlab_instance_type" {
   type        = string
-  default     = "e2-standard-2"
   description = "Machine type for JupyterLab instance"
 }
