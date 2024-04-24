@@ -41,13 +41,15 @@ IMPORTANT ❗ ❗ ❗ Please remember to destroy all the resources after each wo
   
     ***place your diagram here***
 
-11. Create a new PR and add costs by entering the expected consumption into Infracost
+11. ✅ Create a new PR and add costs by entering the expected consumption into Infracost
 For all the resources of type: `google_artifact_registry`, `google_storage_bucket`, `google_service_networking_connection`
 create a sample usage profiles and add it to the Infracost task in CI/CD pipeline. Usage file [example](https://github.com/infracost/infracost/blob/master/infracost-usage-example.yml) 
 
-   ***place the expected consumption you entered here***
+  Expected consumption:
+   ![img.png](photos/infracost_expected_consumption.jpg)
 
-   ***place the screenshot from infracost output here***
+  Infracost output:
+   ![img.png](photos/infracost_plan.png)
 
 11. Create a BigQuery dataset and an external table using SQL
     
@@ -56,13 +58,27 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
     ***why does ORC not require a table schema?***
 
   
-12. Start an interactive session from Vertex AI workbench:
-
-    ***place the screenshot of notebook here***
+12. ✅ Start an interactive session from Vertex AI workbench:
+    
+    ![img.png](photos/interactive_session.jpg)
    
 13. Find and correct the error in spark-job.py
 
-    ***describe the cause and how to find the error***
+    Command for running spark-job.py:
+    gcloud dataproc jobs submit pyspark gs://tbd-2024l-309014-code/spark-job.py --cluster=tbd-cluster --region=europe-west1 --project "tbd-2024l-309014"
+
+    It’s output:
+    ![img.png](photos/spark-job-error.jpg)
+
+    Error: "code" : 404, "message" : "The specified bucket does not exist."
+    How to find what causes error: analize responce
+    
+    Correction:
+    ![img.png](photos/spark-job-correction.jpg)
+
+    Result after correction:
+    ![img.png](photos/spark-job-result-1.jpg)
+    ![img.png](photos/spark-job-result-2.jpg)
 
 14. Additional tasks using Terraform:
 
