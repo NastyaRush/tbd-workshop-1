@@ -34,3 +34,8 @@ variable "ai_notebook_image_tag" {
   default = "latest"
 }
 
+variable "ai_notebook_machine_type" {
+    type        = string
+    default     = "e2-medium"
+    description = "Machine type to use for both worker and master nodes"
+}
