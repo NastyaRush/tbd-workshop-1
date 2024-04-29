@@ -103,6 +103,7 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
 
   Infracost output:
    <img src="https://github.com/NastyaRush/tbd-workshop-1/blob/master/photos/infracost_plan.png" width=60% height=60%>
+   ![img.png](photos/infracost_cost.jpg)
 
 11. ✅ Create a BigQuery dataset and an external table using SQL
 
@@ -155,7 +156,8 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
 
     https://github.com/NastyaRush/tbd-workshop-1/blob/master/main.tf
 
-    ![img.png](photos/arbitrary-types-main.jpg)
+    ![img.png](photos/arbitrary-types-main-1.jpg)
+    ![img.png](photos/arbitrary-types-main-2.jpg)
     
     ✅ ii. Add support for preemptible/spot instances in a Dataproc cluster
 
