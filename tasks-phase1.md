@@ -141,18 +141,21 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
     ✅ i. Add support for arbitrary machine types and worker nodes for a Dataproc cluster and JupyterLab instance
 
     https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/dataproc/main.tf
+
+    ![img.png](photos/mr_wr_machine_types.jpg)
     
     https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/dataproc/variables.tf
 
-    ![img.png](photos/mr_wr_machine_types.jpg)
     ![img.png](photos/mr_wr_machine_types_applied.jpg)
-
+    
     https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/vertex-ai-workbench/main.tf
+
+    ![img.png](photos/jupyterlab_instance_type_applied.jpg)
     
     https://github.com/NastyaRush/tbd-workshop-1/blob/master/modules/vertex-ai-workbench/variables.tf)
 
     ![img.png](photos/jupyterlab_instance_type.jpg)
-    ![img.png](photos/jupyterlab_instance_type_applied.jpg)
+
 
     https://github.com/NastyaRush/tbd-workshop-1/blob/master/main.tf
 
