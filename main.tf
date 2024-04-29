@@ -43,13 +43,13 @@ module "jupyter_docker_image" {
 }
 
 module "vertex_ai_workbench" {
-  depends_on   = [module.jupyter_docker_image, module.vpc]
-  source       = "./modules/vertex-ai-workbench"
-  project_name = var.project_name
-  region       = var.region
-  network      = module.vpc.network.network_id
-  subnet       = module.vpc.subnets[local.notebook_subnet_id].id
-  machine_type = "e2-standard-4"
+  depends_on                 = [module.jupyter_docker_image, module.vpc]
+  source                     = "./modules/vertex-ai-workbench"
+  project_name               = var.project_name
+  region                     = var.region
+  network                    = module.vpc.network.network_id
+  subnet                     = module.vpc.subnets[local.notebook_subnet_id].id
+  machine_type               = "e2-standard-2"
   ai_notebook_instance_owner = var.ai_notebook_instance_owner
   ## To remove before workshop
   # FIXME:remove
@@ -60,11 +60,11 @@ module "vertex_ai_workbench" {
 
 #
 module "dataproc" {
-  depends_on   = [module.vpc]
-  source       = "./modules/dataproc"
-  project_name = var.project_name
-  region       = var.region
-  subnet       = module.vpc.subnets[local.notebook_subnet_id].id
+  depends_on      = [module.vpc]
+  source          = "./modules/dataproc"
+  project_name    = var.project_name
+  region          = var.region
+  subnet          = module.vpc.subnets[local.notebook_subnet_id].id
   mr_machine_type = "e2-standard-2"
   wr_machine_type = "e2-standard-2"
 }
