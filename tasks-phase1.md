@@ -152,6 +152,10 @@ create a sample usage profiles and add it to the Infracost task in CI/CD pipelin
 
     ![img.png](photos/jupyterlab_instance_type.jpg)
     ![img.png](photos/jupyterlab_instance_type_applied.jpg)
+
+    https://github.com/NastyaRush/tbd-workshop-1/blob/master/main.tf
+
+    ![img.png](photos/arbitrary-types-main.jpg)
     
     ✅ ii. Add support for preemptible/spot instances in a Dataproc cluster
 

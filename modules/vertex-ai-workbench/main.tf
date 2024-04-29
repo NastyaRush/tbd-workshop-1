@@ -67,13 +67,20 @@ resource "google_notebooks_instance" "tbd_notebook" {
   instance_owners = [var.ai_notebook_instance_owner]
   metadata = {
     vmDnsSetting : "GlobalDefault"
-    network-disable-root = true
+    notebook-disable-root = true
   }
+  shielded_instance_config {
+    enable_secure_boot = true
+   }
   post_startup_script = "gs://${google_storage_bucket_object.post-startup.bucket}/${google_storage_bucket_object.post-startup.name}"
 
+<<<<<<< HEAD
   shielded_instance_config {
     enable_secure_boot = true
   }
+=======
+
+>>>>>>> b230998c41e011b1119f28699449f3270b0ecfb9
 }
 
 
