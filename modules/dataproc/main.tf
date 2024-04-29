@@ -58,6 +58,5 @@ preemptible_worker_config {
         boot_disk_size_gb = 30
       }
     }
-
   }
 }
