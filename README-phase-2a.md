@@ -50,12 +50,12 @@ the running instance of your Vertex AI Workbench
  
 
 
-6. Access Vertex AI Workbench and run cell by cell notebook `tpc-di-setup.ipynb`.
+✅6. Access Vertex AI Workbench and run cell by cell notebook `tpc-di-setup.ipynb`.
 
-    a) in the first cell of the notebook replace: `%env DATA_BUCKET=tbd-2023z-9910-data` with your data bucket.
+    ✅a) in the first cell of the notebook replace: `%env DATA_BUCKET=tbd-2023z-9910-data` with your data bucket.
 
 
-   b) in the cell:
+   ✅b) in the cell:
          ```%%bash
          mkdir -p git && cd git
          git clone https://github.com/mwiewior/tbd-tpc-di.git
@@ -64,9 +64,9 @@ the running instance of your Vertex AI Workbench
          ```
       replace repo with your fork. Next checkout to 'notebook' branch.
    
-    c) after running first cells your fork of `tbd-tpc-di` repository will be cloned into Vertex AI  enviroment (see git folder).
+    ✅c) after running first cells your fork of `tbd-tpc-di` repository will be cloned into Vertex AI  enviroment (see git folder).
 
-    d) take a look on `git/tbd-tpc-di/profiles.yaml`. This file includes Spark parameters that can be changed if you need to increase the number of executors and
+    ✅d) take a look on `git/tbd-tpc-di/profiles.yaml`. This file includes Spark parameters that can be changed if you need to increase the number of executors and
   ```
    server_side_parameters:
        "spark.driver.memory": "2g"
@@ -76,13 +76,13 @@ the running instance of your Vertex AI Workbench
   ```
 
 
-7. Explore files created by generator and describe them, including format, content, total size.
+✅7. Explore files created by generator and describe them, including format, content, total size.
 
    ***Files desccription***
 
-8. Analyze tpcdi.py. What happened in the loading stage?
+✅8. Analyze tpcdi.py. What happened in the loading stage?
 
-   ***Your answer***
+   The script creates a Spark session and ensures the necessary databases (digen, bronze, silver, gold) are created and used. It processes various TPC-DI files (e.g., Date.txt, DailyMarket.txt, Industry.txt, Prospect.csv, etc.) by: uploading files to a specified Google Cloud Storage stage, reading the files into Spark DataFrames with appropriate schemas, saving DataFrames as Parquet tables in the Data Lakehouse.
 
 9. Using SparkSQL answer: how many table were created in each layer?
 
