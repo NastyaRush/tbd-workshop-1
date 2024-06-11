@@ -91,6 +91,12 @@ the running instance of your Vertex AI Workbench
 10. Add some 3 more [dbt tests](https://docs.getdbt.com/docs/build/tests) and explain what you are testing. ***Add new tests to your repository.***
 
    ***Code and description of your tests***
+   
+   1)
+   
+   2)
+   
+   3)
 
 11. In main.tf update
    ```
