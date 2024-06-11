@@ -89,14 +89,23 @@ the running instance of your Vertex AI Workbench
    ***SparkSQL command and output***
 
 10. Add some 3 more [dbt tests](https://docs.getdbt.com/docs/build/tests) and explain what you are testing. ***Add new tests to your repository.***
+   
+   1) select *
+from {{ ref('accounts') }}
+where customer_id not in (select customer_id from from {{ ref('customers') }})
+This SQL query retrieves all rows from the accounts table where the customer_id does not exist in the customers table. It essentially finds accounts that do not have a corresponding customer record.
+   
+   3) select *
+from {{ ref('watches_history') }}
+where customer_id is null
+This SQL query retrieves all rows from the watches_history table where the customer_id column is NULL. It finds all entries in the watches_history table that do not have an associated customer ID.
+   
+   5) select *
+from {{ ref('trades_history') }}
+where trade_status not in ('Completed', 'Submitted', 'Canceled', 'Pending')
+correct_trade_status
+This SQL query retrieves all rows from the trades_history table where the trade_status is not 'Completed', 'Submitted', 'Canceled', or 'Pending'. It finds trades with statuses that are not part of the typical expected statuses.
 
-   ***Code and description of your tests***
-   
-   1)
-   
-   2)
-   
-   3)
 
 11. In main.tf update
    ```
