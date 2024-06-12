@@ -109,7 +109,7 @@ This SQL query retrieves all rows from the trades_history table where the trade_
 
 ✅ 11. In main.tf update
    ```
-   dbt_git_repo            = "https://github.com/mwiewior/tbd-tpc-di.git"
+   dbt_git_repo            = "https://github.com/tbd2024Lgroup9/tbd-tpc-di.git"
    dbt_git_repo_branch     = "main"
    ```
    so dbt_git_repo points to your fork of tbd-tpc-di. 
