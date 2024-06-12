@@ -116,6 +116,9 @@ correct_trade_status
 This SQL query retrieves all rows from the trades_history table where the trade_status is not 'Completed', 'Submitted', 'Canceled', or 'Pending'. It finds trades with statuses that are not part of the typical expected statuses.
 
 
+![img.png](photos/passed_tests.png)
+
+
 ✅ 11. In main.tf update
    ```
    dbt_git_repo            = "https://github.com/tbd2024Lgroup9/tbd-tpc-di.git"
