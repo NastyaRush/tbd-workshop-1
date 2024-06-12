@@ -1,6 +1,6 @@
-0. The goal of phase 2b is to perform benchmarking/scalability tests of sample three-tier lakehouse solution.
+✅ 0. The goal of phase 2b is to perform benchmarking/scalability tests of sample three-tier lakehouse solution.
 
-1. In main.tf, change machine_type at:
+✅ 1. In main.tf, change machine_type at:
 
 ```
 module "dataproc" {
