@@ -18,16 +18,16 @@ and subsititute "e2-standard-2" with "e2-standard-4".
 ✅ 2. If needed request to increase cpu quotas (e.g. to 30 CPUs): 
 https://console.cloud.google.com/apis/api/compute.googleapis.com/quotas?project=tbd-2023z-9918
 
-3. Using tbd-tpc-di notebook perform dbt run with different number of executors, i.e., 1, 2, and 5, by changing:
+✅ 3. Using tbd-tpc-di notebook perform dbt run with different number of executors, i.e., 1, 2, and 5, by changing:
 ```
  "spark.executor.instances": "2"
 ```
 
 in profiles.yml.
 
-4. In the notebook, collect console output from dbt run, then parse it and retrieve total execution time and execution times of processing each model. Save the results from each number of executors. 
+✅ 4. In the notebook, collect console output from dbt run, then parse it and retrieve total execution time and execution times of processing each model. Save the results from each number of executors. 
 
-5. Analyze the performance and scalability of execution times of each model. Visualize and discucss the final results.
+✅ 5. Analyze the performance and scalability of execution times of each model. Visualize and discucss the final results.
 
 Overall, increasing the number of executors tends to decrease the duration of running the code for most table models.
 For some table models, the duration decreases significantly with more executors, indicating good scalability.
