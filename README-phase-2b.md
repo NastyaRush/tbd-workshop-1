@@ -32,6 +32,13 @@ in profiles.yml.
 ![img.png](photos/execution_times_plot.jpg)
 ![img.png](photos/execution_times_table.jpg)
 
+| Number of Executors | Total Execution Time |
+|---------------------|----------------------|
+| 1                   | 771.34s              |
+| 2                   | 586.49s              |
+| 5                   | 439.58s              |
+
+
 Overall, increasing the number of executors tends to decrease the duration of running the code for most table models.
 For some table models, the duration decreases significantly with more executors, indicating good scalability.
 However, the extent of improvement varies across different table models.
