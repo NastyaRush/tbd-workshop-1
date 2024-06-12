@@ -29,6 +29,9 @@ in profiles.yml.
 
 ✅ 5. Analyze the performance and scalability of execution times of each model. Visualize and discucss the final results.
 
+![img.png](photos/execution_times_plot.jpg)
+![img.png](photos/execution_times_table.jpg)
+
 Overall, increasing the number of executors tends to decrease the duration of running the code for most table models.
 For some table models, the duration decreases significantly with more executors, indicating good scalability.
 However, the extent of improvement varies across different table models.
