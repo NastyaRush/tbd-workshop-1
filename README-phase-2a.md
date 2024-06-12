@@ -126,6 +126,7 @@ This SQL query retrieves all rows from the trades_history table where the trade_
    ```
    so dbt_git_repo points to your fork of tbd-tpc-di. 
 
-12. Redeploy infrastructure and check if the DAG finished with no errors:
+✅ 12. Redeploy infrastructure and check if the DAG finished with no errors:
 
 ***The screenshot of Apache Aiflow UI***
+![img.png](photos/dags.jpg)
