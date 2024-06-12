@@ -80,6 +80,13 @@ the running instance of your Vertex AI Workbench
 
    ***Files desccription***
 
+   There are 217 files in total. First 14 files here contain data from tables, their formats: txt, csv, xml, their sizes: from 89B to 295.2MB:
+   ![img.png](photos/files_description_2.jpg)
+   ![img.png](photos/files_description_1.jpg)
+
+   The rest of the files, from FINWIRE1967Q1 to FINWIRE2017Q3 contain some text data, each file corresponds to quarter of some year, their sizes: from 57.6KB to 968.4KB:
+   ![img.png](photos/files_description_3.jpg)
+
 ✅8. Analyze tpcdi.py. What happened in the loading stage?
 
    The script creates a Spark session and ensures the necessary databases (digen, bronze, silver, gold) are created and used. It processes various TPC-DI files (e.g., Date.txt, DailyMarket.txt, Industry.txt, Prospect.csv, etc.) by: uploading files to a specified Google Cloud Storage stage, reading the files into Spark DataFrames with appropriate schemas, saving DataFrames as Parquet tables in the Data Lakehouse.
