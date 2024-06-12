@@ -84,11 +84,11 @@ the running instance of your Vertex AI Workbench
 
    The script creates a Spark session and ensures the necessary databases (digen, bronze, silver, gold) are created and used. It processes various TPC-DI files (e.g., Date.txt, DailyMarket.txt, Industry.txt, Prospect.csv, etc.) by: uploading files to a specified Google Cloud Storage stage, reading the files into Spark DataFrames with appropriate schemas, saving DataFrames as Parquet tables in the Data Lakehouse.
 
-9. Using SparkSQL answer: how many table were created in each layer?
+✅ 9. Using SparkSQL answer: how many table were created in each layer?
 
    ***SparkSQL command and output***
 
-10. Add some 3 more [dbt tests](https://docs.getdbt.com/docs/build/tests) and explain what you are testing. ***Add new tests to your repository.***
+✅ 10. Add some 3 more [dbt tests](https://docs.getdbt.com/docs/build/tests) and explain what you are testing. ***Add new tests to your repository.***
    
    1) select *
 from {{ ref('accounts') }}
@@ -107,7 +107,7 @@ correct_trade_status
 This SQL query retrieves all rows from the trades_history table where the trade_status is not 'Completed', 'Submitted', 'Canceled', or 'Pending'. It finds trades with statuses that are not part of the typical expected statuses.
 
 
-11. In main.tf update
+✅ 11. In main.tf update
    ```
    dbt_git_repo            = "https://github.com/mwiewior/tbd-tpc-di.git"
    dbt_git_repo_branch     = "main"
